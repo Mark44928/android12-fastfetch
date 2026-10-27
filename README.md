@@ -1,12 +1,13 @@
 # android12-fastfetch
 
-A [Fastfetch](https://github.com/fastfetch-cli/fastfetch) config tuned for **Android 12 / Termux** and native **X11 Termux desktops** (XFCE, MATE, LXQt, …). It draws a fixed-width table with hardware, desktop, terminal, development, and uptime sections, then prints the color palette.
-
-![Preview](Screenshot_20260719-000819.png)
-
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 ![Fastfetch](https://img.shields.io/badge/fastfetch-config-5e5ce6)
 ![Android 12](https://img.shields.io/badge/Android-12-3DDC84?logo=android&logoColor=white)
 ![Termux](https://img.shields.io/badge/Termux-ready-000000?logo=termux)
+
+A [Fastfetch](https://github.com/fastfetch-cli/fastfetch) config tuned for **Android 12 / Termux** and native **X11 Termux desktops** (XFCE, MATE, LXQt, …). It draws a fixed-width table with hardware, desktop, terminal, development, and uptime sections, then prints the color palette.
+
+![Preview](Screenshot_20260719-000819.png)
 
 ## What's included
 
@@ -63,4 +64,5 @@ fastfetch
 
 ## License
 
-No license file is included yet. If you want others to reuse this config, add a `LICENSE` (MIT is a common choice for dotfiles).
+[MIT](LICENSE) — free to reuse, fork, or adapt. See [CONTRIBUTING.md](CONTRIBUTING.md)
+to contribute; this project follows the standard [Code of Conduct](CODE_OF_CONDUCT.md).
