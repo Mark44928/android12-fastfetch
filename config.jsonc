@@ -94,13 +94,12 @@
             "key": "║{##458588}│ {icon}  GPU       │{$4}│{#keys}║{$2}"
         },
         {
-                    "type": "disk",
-                                "key": "║{##458588}│ {icon}  Disk      │{$4}│{#keys}║{$2}",
-                                            "format": "{size-used} \/ {size-total} ({size-percentage}) - {filesystem}",
-                                                        "folders": "/data:/storage/BC20-120B"
-                                                                },
-
-                                                                        {
+            "type": "disk",
+            "key": "║{##458588}│ {icon}  Disk      │{$4}│{#keys}║{$2}",
+            "format": "{size-used} \/ {size-total} ({size-percentage}) - {filesystem}",
+            "folders": "/data:/storage/BC20-120B"
+        },
+        {
             "type": "battery",
             "key": "║{##458588}│ {icon}  Battery   │{$4}│{#keys}║{$2}"
         },
@@ -117,8 +116,11 @@
             "format": "{##98971a} Desktop "
         },
         {
-            "type": "de",
-            "key": "║{##8ec07c}│ {icon}  Desktop   │{$4}│{#keys}║{$2}"
+            // Android's DE module misreports the firmware string (e.g.
+            // "T10_MYT10_20250804_V3.0"), which breaks the fixed-width table.
+            // A WLAN IP is far more useful on a phone/X11 combo setup.
+            "type": "localip",
+            "key": "║{##8ec07c}│ {icon}  Local IP │{$4}│{#keys}║{$2}"
         },
         {
             "type": "wm",
