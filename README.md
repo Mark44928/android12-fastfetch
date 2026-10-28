@@ -50,7 +50,7 @@ fastfetch
 - **Logo** — edit `logo.source` in `config.jsonc`. Set `"type": "builtin"` to use Fastfetch's built-in logos instead.
 - **Disk folders** — edit `"folders": "/data:/storage/BC20-120B"` to match your storage. Most phones use `/data:/storage/emulated/0`; the SD-card UUID is different on every device.
 - **Colors** — the config uses Gruvbox hex values. Change the `{##...}` colors to match your theme.
-- **Sections** — remove or comment out modules you do not need (for example `battery`, `gpu`, `de`, or `wm`).
+- **Sections** — remove or comment out modules you do not need (for example `battery`, `gpu`, `localip`, or `wm`).
 - **Key width** — the cursor constants (`\u001b[47D`, `\u001b[47C`, …) assume a 47-column value block. If you change the labels or width, adjust those constants too.
 
 ## Notes and troubleshooting
