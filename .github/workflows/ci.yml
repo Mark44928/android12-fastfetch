@@ -14,10 +14,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install fastfetch (release tarball, no root needed)
         run: |
-          curl -fsSL -o /tmp/fastfetch.tar.gz \
+          # the tarball is rooted at fastfetch-linux-amd64/usr/bin/, so the
+          # binary needs three path components stripped to land alone in bin/
+          curl -fsSL -o "$RUNNER_TEMP/fastfetch.tar.gz" \
             https://github.com/fastfetch-cli/fastfetch/releases/download/2.71.0/fastfetch-linux-amd64.tar.gz
           mkdir -p "$HOME/.local/bin"
-          tar -xzf /tmp/fastfetch.tar.gz -C "$HOME/.local/bin" fastfetch
+          tar -xzf "$RUNNER_TEMP/fastfetch.tar.gz" -C "$HOME/.local/bin" \
+            --strip-components=3 fastfetch-linux-amd64/usr/bin/fastfetch
           chmod +x "$HOME/.local/bin/fastfetch"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - name: Config parses and runs
