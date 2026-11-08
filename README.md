@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 ![Fastfetch](https://img.shields.io/badge/fastfetch-config-5e5ce6)
 ![Android 12](https://img.shields.io/badge/Android-12-3DDC84?logo=android&logoColor=white)
+![Config version](https://img.shields.io/badge/config%20version-v1.1.0-blue)
 ![Termux](https://img.shields.io/badge/Termux-ready-000000?logo=termux)
 
 A [Fastfetch](https://github.com/fastfetch-cli/fastfetch) config tuned for **Android 12 / Termux** and native **X11 Termux desktops** (XFCE, MATE, LXQt, …). It draws a fixed-width table with hardware, desktop, terminal, development, and uptime sections, then prints the color palette.
@@ -16,10 +17,14 @@ A [Fastfetch](https://github.com/fastfetch-cli/fastfetch) config tuned for **And
 
 ## Requirements
 
-- [fastfetch](https://github.com/fastfetch-cli/fastfetch) — a recent version with JSON schema support
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch) — **2.51.0 or newer** (JSONC config format); tested on 2.71.0
 - A terminal with UTF-8, a Nerd Font, and truecolor for the icons and borders
 - On Termux: `pkg install fastfetch` (or build from source)
 - Optional, for the Desktop section: `xdpyinfo` and `xrandr` (missing commands show `Unknown` instead of failing)
+
+> **Before 2.51.0?** The JSONC config format was not stable yet — upgrade with
+> `pkg update && pkg upgrade fastfetch`, or fetch a release build from the
+> fastfetch GitHub releases.
 
 ## Install
 
@@ -47,8 +52,8 @@ fastfetch
 
 ## Customize
 
-- **Logo** — edit `logo.source` in `config.jsonc`. Set `"type": "builtin"` to use Fastfetch's built-in logos instead.
-- **Disk folders** — edit `"folders": "/data:/storage/BC20-120B"` to match your storage. Most phones use `/data:/storage/emulated/0`; the SD-card UUID is different on every device.
+- **Logo** — edit `logo.source` in `config.jsonc`. Set `"type": "builtin"` to use Fastfetch's built-in logos instead. `ascii.txt` is a penguin-style ASCII logo kept in `$HOME` (see its provenance note in [Notes](#notes-and-troubleshooting)).
+- **Disk folders** — edit `"folders"` to match your storage. The default is `/data:/storage/emulated/0` (internal storage, works on every device); run `ls /storage` to discover an SD-card mount point like `/storage/0143-1A2B` and add it, colon-separated.
 - **Colors** — the config uses Gruvbox hex values. Change the `{##...}` colors to match your theme.
 - **Sections** — remove or comment out modules you do not need (for example `battery`, `gpu`, `localip`, or `wm`).
 - **Key width** — the cursor constants (`\u001b[47D`, `\u001b[47C`, …) assume a 47-column value block. If you change the labels or width, adjust those constants too.
@@ -56,11 +61,31 @@ fastfetch
 ## Notes and troubleshooting
 
 - The config is **JSONC**: comments are allowed. Fastfetch accepts it, but strict JSON tools may not.
-- If icons render as boxes, install a Nerd Font and select it in your terminal.
-- If the table is misaligned, use a monospace font and a wider terminal window.
-- On non-Android systems, remove the Android-specific modules (`battery`, `/data` disk folder, Termux package manager).
+- `$schema` is pinned to the **2.71.0 release tag** — bump it (and re-run `fastfetch`) when you upgrade fastfetch, so schema drift cannot silently invalidate the config.
+- In a plain Termux shell the Desktop-section rows (Session, Display, WM Theme, Icons, Terminal Font, Terminal Theme, X11 Backend) print `Unknown` — they are only meaningful under Termux:X11. Delete that section if you never use X11; the command modules inside it already gate themselves with `system` conditionals.
+- The two GPU rows are intentional: **GPU** is the hardware model, **G-Driver** is the driver/version detail.
+- The **Hardware** section (`RAM`, `CPU`, …) also renders correctly in plain Termux — only the *desktop* rows need X11.
 - `xdpyinfo` comes from `x11-utils` on Debian/Ubuntu or the Termux X11 packages.
-- The screenshot shows the author's SD-card path; your `disk` module will differ until you edit `folders`.
+- Long values (CPU model, Terminal Font, Theme strings) can push past the 47-column value block and shift the right border — shorten the terminal font/theme values, or wrap them in a per-module `format` if your device shows misaligned rows.
+- **`ascii.txt` provenance:** the penguin-style logo was assembled by the repo author from ASCII penguin art in the style of the classic `pingu`/`cowsay` lineage; it is a configuration asset covered by the repo's MIT license, not a stock fastfetch logo.
+- The screenshot shows the author's SD-card path; your `disk` module will differ if you add a custom `folders` entry.
+
+## Changelog
+
+### Config v1.1.0
+- **`Processes` row** in the Hardware section (process + thread count) — the
+  label keeps the fixed-width alignment, and the module works on plain Termux
+  CLI, not just X11
+- `$schema` pinned to the **2.71.0 release tag** instead of the moving `dev`
+  branch, so schema drift cannot silently invalidate the config
+- `disk.folders` defaults to `/data:/storage/emulated/0` (works on every
+  device) instead of the author's SD-card UUID, with a comment explaining how
+  to add your own mount point
+- Desktop section documented as X11-only, and the two GPU rows
+  (hardware model vs driver version) explained
+- `ascii.txt` provenance/language added to the license note
+- CI actually runs `fastfetch -c config.jsonc --pipe` on a real 2.71.0 binary
+  and asserts the RAM/CPU/Disk rows render
 
 ## License
 
