@@ -33,7 +33,10 @@ jobs:
       - name: Expected rows render
         run: |
           out=$(fastfetch -c config.jsonc --pipe | sed 's/\x1b\[[0-9;]*[A-Za-z]//g')
-          for row in RAM CPU Disk; do
+          # Disk depends on the configured mount points existing (/data and
+          # /storage/emulated/0 are Android paths), so it is checked on a
+          # device, not here.
+          for row in RAM CPU; do
             printf '%s\n' "$out" | grep -q "$row" || { echo "missing $row row"; exit 1; }
           done
           echo "rows OK"
