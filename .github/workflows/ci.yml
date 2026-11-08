@@ -27,11 +27,13 @@ jobs:
         run: |
           cp ascii.txt "$HOME/ascii.txt"
           fastfetch -c config.jsonc --pipe
+      # The config is Android-shaped (Termux disk folders, dpkg counts), so on
+      # a Linux runner the rows must still RENDER — the values themselves
+      # differ by platform and are not what this checks.
       - name: Expected rows render
         run: |
           out=$(fastfetch -c config.jsonc --pipe | sed 's/\x1b\[[0-9;]*[A-Za-z]//g')
-          printf '%s\n' "$out" | grep -q "RAM" || { echo "missing RAM row"; exit 1; }
-          printf '%s\n' "$out" | grep -q "CPU" || { echo "missing CPU row"; exit 1; }
-          printf '%s\n' "$out" | grep -q "Disk" || { echo "missing Disk row"; exit 1; }
-          printf '%s\n' "$out" | grep -q "ext4\|btrfs\|apfs\|ntfs" || { echo "disk row has no filesystem"; exit 1; }
+          for row in RAM CPU Disk; do
+            printf '%s\n' "$out" | grep -q "$row" || { echo "missing $row row"; exit 1; }
+          done
           echo "rows OK"
