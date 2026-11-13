@@ -12,8 +12,9 @@ JSONC config and one ASCII logo — and staying tiny is the point.
 3. **The 47-column value block is load-bearing.** The cursor constants
    (`\u001b[47D`, `\u001b[47C`, …) and the label widths must agree. If you
    change labels or layout, re-check the alignment in a real terminal.
-4. **Screenshot changes**: update the preview PNG only when the rendered
-   output changes. Compress it (PNG → ~200 KB or smaller) before committing.
+4. **Preview changes**: README.md shows the fenced <code>--pipe</code> capture
+   of the real output. Regenerate it on a real device whenever the rendered output
+   changes; never check in a screenshot of a different source.
 
 ## Getting started
 

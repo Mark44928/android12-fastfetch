@@ -8,7 +8,55 @@
 
 A [Fastfetch](https://github.com/fastfetch-cli/fastfetch) config tuned for **Android 12 / Termux** and native **X11 Termux desktops** (XFCE, MATE, LXQt, …). It draws a fixed-width table with hardware, desktop, terminal, development, and uptime sections, then prints the color palette.
 
-![Preview](Screenshot_20260719-000819.png)
+<p align="center"><i>Actual <code>fastfetch -c config.jsonc --pipe</code> output from this repo's author's Android 12 Termux device (fastfetch 2.71.0) — fixed-width bordered table, hardware → desktop → terminal → development → uptime, with the Gruvbox palette printed at the bottom. Shown with the ANSI cursor escapes stripped (as <code>--pipe</code> piped through <code>sed</code> emits it), so the logo column and the table collapse slightly — in a real terminal the cursor positioning lines the right border up exactly.</i></p>
+
+```text
+                    zzzzzzzzzzzzzzzzzzzz                        ╔═══════════════╦═══════════════════════════════════════════════╗ fastfetch - 2.71.0 
+                zzzzzzzzzzzzzzzzzzzzzzzzzzzz                    ║    Linux║║Android Snow Cone 12 aarch64
+             zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz                 ║    Fetched   ║║2026-11-13 21:22:11 PST
+          zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz              ║    Locale    ║║en_US.UTF-8
+        zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz            ║┌──────────────┬──────────────────────────────────────────────┐║ Hardware 
+       zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz           ║│   RAM       ││║2.97 GiB / 3.72 GiB (80%)
+     zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz         ║│ 󰓡  SWAP      ││║1.17 GiB / 2.05 GiB (57%)
+    zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz        ║│   CPU       ││║MT6762 (4+4) @ 2.00 GHz
+   zzzzzzzzzzz{›—{zzzzzzzzzzzzzí{——››—{ízzzzzzzzzzzzzzzzz       ║│   Processes││║24 (113 threads)
+  zzzzzzzzzzzzíí{› {zzzzzzzzí—  —{{íí{—› —ízzzzzzzzzzzzzzz      ║│ 󰾲  GPU       ││║PowerVR Rogue GE8320 [Integrated]
+ zzzzzzzzzzzzzzzzz— {zzzzzz— ›{zzzzzzzzzí› —zzzzzzzzzzzzzzz     ║│   Disk      ││║31.85 GiB / 50.44 GiB (63%) - ext4
+ zzzzzzzzzzzzzzzzzz ›zzzzz› {zzzzzzzzzzzzz— —zzzzzzzzzzzzzz     ║│   Battery   ││║40% (4 hours, 42 mins remaining) [Discharging]
+zzzzzzzzzzzzzzzzzzz ›zzzz{ —zzzzzzzzzzzzzzz› ízzzzzzzzzzzzzz    ║└──────────────┴──────────────────────────────────────────────┘║
+zzzzzzzzzzzzzzzzzzz ›zzzz{{zzzzzzzzzzzzzzzz{ —zzzzzzzzzzzzzz    ║┌──────────────┬──────────────────────────────────────────────┐║ Desktop 
+zzzzzzzzzzzzzzzzzzz ›zzzzzzzzzzzzzzzzzzzzzz{ —zzzzzzzzzzzzzz    ║│ 󰩟  Local IP ││║192.168.18.197/24 *
+zzzzzzzzzzzzzzzzzzz ›zzzzzzzzzzzzzzzzzzzzí{ —zzzzzzzzzzzzzzz    ║│   Session   ││║WindowManager (SurfaceFlinger)
+zzzzzzzzzzzzzzzzzzz ›zzzzzzzzzí{—››       —{zzzzzzzzzzzzzzzz    ║│ 󰍹  Display   ││║1280x800 @ 60 Hz
+zzzzzzzzzzzzzzzzzzz ›zzzzzzz{››—íízzzzzzzzzzzzzzzzzzzzzzzzzz    ║│ 󰍹  X11 Back  ││║Unknown
+zzzzzzzzzzzzzzzzzzz ›zzzzzz› ízzzzzzzzzzzzzzzzzzzzzzzzzzzzzz    ║│ 󰾲  G-Driver  ││║
+zzzzzzzzzzzzzzzzzzz ›zzzzz ›ízzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz    ║│ 󰉼  Themes    ││║Lavanda-Sea-Light [GTK2]
+zzzzzzzzzzzzzzzzzzz ›zzzz{ {zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz    ║│   Icons     ││║Reversal-blue [GTK2]
+ zzzzzzzzzzzzzzzzzz ›zzzz› ízzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz     ║└──────────────┴──────────────────────────────────────────────┘║
+ zzzzzzzzzzzzzzzzzz ›zzzz› zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz     ║┌──────────────┬──────────────────────────────────────────────┐║ Terminal 
+  zzzzzzzzzzzzzzzzz ›zzzz› íííííííííííííííííízzzzzzzzzzzzz      ║│   Shell     ││║zsh 5.9.2
+   zzzzzzzzzzzzzzzz›—zzzz—›››››››››››››››››››{zzzzzzzzzzz       ║│   Terminal  ││║opencode
+    zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz        ║│ 󰏖  Packages  ││║493 (dpkg)
+     zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz         ║│ 󰏖  Pkg Mgr   ││║pkg (Termux)
+       zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz           ║└──────────────┴──────────────────────────────────────────────┘║
+        zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz            ║┌──────────────┬──────────────────────────────────────────────┐║ Development 
+          zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz              ║│   Rust      ││║rustc not installed
+             zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz                 ║│   Clang     ││║clang 21.1.8
+                zzzzzzzzzzzzzzzzzzzzzzzzzzzz                    ║│   NodeJS    ││║node 26.13.0
+                    zzzzzzzzzzzzzzzzzzzz                        ║│   Go        ││║go not installed
+ _____________________                                          ║│   Zig       ││║zig not installed
+< Noot noot Penguins! >                                         ║│ 󱞎  Editor    ││║nano 9.3
+ ---------------------                                          ║│ 󰊢  Git       ││║git 2.56.1
+   \                                                            ║│   Interface ││║Sans (11pt) [GTK2]
+    \                                                           ║└──────────────┴──────────────────────────────────────────────┘║
+        .--.                                                    ║┌──────────────┬──────────────────────────────────────────────┐║ Uptime 
+       |o_o |                                                   ║│   Uptime    ││║3 hours, 30 mins
+       |:_/ |                                                   ║└──────────────┴──────────────────────────────────────────────┘║
+      //   \ \                                                  ╚═══════════════════════════════════════════════════════════════╝
+     (|     | )                                                 
+    /'\_   _/`\                                                                         
+    \___)=(___/                                                                         
+```
 
 ## What's included
 
@@ -68,7 +116,7 @@ fastfetch
 - `xdpyinfo` comes from `x11-utils` on Debian/Ubuntu or the Termux X11 packages.
 - Long values (CPU model, Terminal Font, Theme strings) can push past the 47-column value block and shift the right border — shorten the terminal font/theme values, or wrap them in a per-module `format` if your device shows misaligned rows.
 - **`ascii.txt` provenance:** the penguin-style logo was assembled by the repo author from ASCII penguin art in the style of the classic `pingu`/`cowsay` lineage; it is a configuration asset covered by the repo's MIT license, not a stock fastfetch logo.
-- The screenshot shows the author's SD-card path; your `disk` module will differ if you add a custom `folders` entry.
+- The Disk row in the preview assumes the default `/data:/storage/emulated/0` mount points; your `disk` module will print differently if you add a custom `folders` entry.
 
 ## Changelog
 
