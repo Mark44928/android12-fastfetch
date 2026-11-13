@@ -13,16 +13,16 @@ A [Fastfetch](https://github.com/fastfetch-cli/fastfetch) config tuned for **And
 ```text
                     zzzzzzzzzzzzzzzzzzzz                        ╔═══════════════╦═══════════════════════════════════════════════╗ fastfetch - 2.71.0 
                 zzzzzzzzzzzzzzzzzzzzzzzzzzzz                    ║    Linux║║Android Snow Cone 12 aarch64
-             zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz                 ║    Fetched   ║║2026-11-13 21:22:11 PST
+             zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz                 ║    Fetched   ║║2026-11-13 21:33:48 PST
           zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz              ║    Locale    ║║en_US.UTF-8
         zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz            ║┌──────────────┬──────────────────────────────────────────────┐║ Hardware 
-       zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz           ║│   RAM       ││║2.97 GiB / 3.72 GiB (80%)
-     zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz         ║│ 󰓡  SWAP      ││║1.17 GiB / 2.05 GiB (57%)
+       zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz           ║│   RAM       ││║3.18 GiB / 3.72 GiB (85%)
+     zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz         ║│ 󰓡  SWAP      ││║1.41 GiB / 2.05 GiB (69%)
     zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz        ║│   CPU       ││║MT6762 (4+4) @ 2.00 GHz
-   zzzzzzzzzzz{›—{zzzzzzzzzzzzzí{——››—{ízzzzzzzzzzzzzzzzz       ║│   Processes││║24 (113 threads)
+   zzzzzzzzzzz{›—{zzzzzzzzzzzzzí{——››—{ízzzzzzzzzzzzzzzzz       ║│   Processes││║28 (117 threads)
   zzzzzzzzzzzzíí{› {zzzzzzzzí—  —{{íí{—› —ízzzzzzzzzzzzzzz      ║│ 󰾲  GPU       ││║PowerVR Rogue GE8320 [Integrated]
- zzzzzzzzzzzzzzzzz— {zzzzzz— ›{zzzzzzzzzí› —zzzzzzzzzzzzzzz     ║│   Disk      ││║31.85 GiB / 50.44 GiB (63%) - ext4
- zzzzzzzzzzzzzzzzzz ›zzzzz› {zzzzzzzzzzzzz— —zzzzzzzzzzzzzz     ║│   Battery   ││║40% (4 hours, 42 mins remaining) [Discharging]
+ zzzzzzzzzzzzzzzzz— {zzzzzz— ›{zzzzzzzzzí› —zzzzzzzzzzzzzzz     ║│   Disk      ││║31.86 GiB / 50.44 GiB (63%) - ext4
+ zzzzzzzzzzzzzzzzzz ›zzzzz› {zzzzzzzzzzzzz— —zzzzzzzzzzzzzz     ║│   Battery   ││║38% (4 hours, 26 mins remaining) [Discharging]
 zzzzzzzzzzzzzzzzzzz ›zzzz{ —zzzzzzzzzzzzzzz› ízzzzzzzzzzzzzz    ║└──────────────┴──────────────────────────────────────────────┘║
 zzzzzzzzzzzzzzzzzzz ›zzzz{{zzzzzzzzzzzzzzzz{ —zzzzzzzzzzzzzz    ║┌──────────────┬──────────────────────────────────────────────┐║ Desktop 
 zzzzzzzzzzzzzzzzzzz ›zzzzzzzzzzzzzzzzzzzzzz{ —zzzzzzzzzzzzzz    ║│ 󰩟  Local IP ││║192.168.18.197/24 *
@@ -50,12 +50,12 @@ zzzzzzzzzzzzzzzzzzz ›zzzz{ {zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz    ║│   Ic
    \                                                            ║│   Interface ││║Sans (11pt) [GTK2]
     \                                                           ║└──────────────┴──────────────────────────────────────────────┘║
         .--.                                                    ║┌──────────────┬──────────────────────────────────────────────┐║ Uptime 
-       |o_o |                                                   ║│   Uptime    ││║3 hours, 30 mins
+       |o_o |                                                   ║│   Uptime    ││║3 hours, 42 mins
        |:_/ |                                                   ║└──────────────┴──────────────────────────────────────────────┘║
       //   \ \                                                  ╚═══════════════════════════════════════════════════════════════╝
      (|     | )                                                 
     /'\_   _/`\                                                                         
-    \___)=(___/                                                                         
+    \___)=(___/
 ```
 
 ## What's included
