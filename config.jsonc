@@ -168,9 +168,13 @@
             "text": "result=$(xdpyinfo 2>/dev/null | awk -F': ' '/vendor string/ {print $2; exit}'); [ -n \"$result\" ] && echo \"$result\" || echo \"Unknown\""
         },
         {
+            // On Android only the first `gpu` module in a config receives the
+            // driver probe, so a second `gpu` module with "format": "{driver}"
+            // renders empty. {platform-api} is available on every gpu module
+            // and includes the driver build string on Android.
             "type": "gpu",
             "key": "║{##8ec07c}│ {icon}  G-Driver  │{$4}│{#keys}║{$2}",
-            "format": "{driver}"
+            "format": "{platform-api}"
         },
         {
             "type": "theme",
