@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 ![Fastfetch](https://img.shields.io/badge/fastfetch-config-5e5ce6)
 ![Android 12](https://img.shields.io/badge/Android-12-3DDC84?logo=android&logoColor=white)
-![Config version](https://img.shields.io/badge/config%20version-v1.1.0-blue)
+![Config version](https://img.shields.io/badge/config%20version-v1.2.0-blue)
 ![Termux](https://img.shields.io/badge/Termux-ready-000000?logo=termux)
 
 A [Fastfetch](https://github.com/fastfetch-cli/fastfetch) config tuned for **Android 12 / Termux** and native **X11 Termux desktops** (XFCE, MATE, LXQt, …). It draws a fixed-width table with hardware, desktop, terminal, development, and uptime sections, then prints the color palette.
