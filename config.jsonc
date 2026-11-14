@@ -79,6 +79,11 @@
             "key": "║{##458588}│ {icon}  Chassis   │{$4}│{#keys}║{$2}"
         },
         {
+            // New — running kernel (uname -r) beside the chassis model.
+            "type": "kernel",
+            "key": "║{##458588}│ {icon}  Kernel   │{$4}│{#keys}║{$2}"
+        },
+        {
             "type": "memory",
             "key": "║{##458588}│ {icon}  RAM       │{$4}│{#keys}║{$2}"
         },
@@ -97,6 +102,12 @@
             // right border stays aligned.
             "type": "processes",
             "key": "║{##458588}│ {icon}  Processes│{$4}│{#keys}║{$2}"
+        },
+        {
+            // New — 1/5/15-minute load averages (the Uptime/Login rows below
+            // already cover uptime and logged-in users).
+            "type": "loadavg",
+            "key": "║{##458588}│ {icon}  Load     │{$4}│{#keys}║{$2}"
         },
         {
             "type": "gpu",

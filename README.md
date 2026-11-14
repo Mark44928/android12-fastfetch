@@ -74,6 +74,12 @@ fastfetch
 
 ## Changelog
 
+### Config v1.2.0
+- **`Kernel` row** beside Chassis — running kernel release (`uname -r`)
+- **`Load` row** in the Hardware section — 1/5/15-minute load averages, so
+  the box's pressure is visible next to CPU and RAM (uptime and login rows
+  stay in the Uptime section below)
+
 ### Config v1.1.0
 - **`Processes` row** in the Hardware section (process + thread count) — the
   label keeps the fixed-width alignment, and the module works on plain Termux
