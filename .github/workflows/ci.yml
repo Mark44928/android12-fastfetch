@@ -41,3 +41,5 @@ jobs:
             printf '%s\n' "$out" | grep -q "$row" || { echo "missing $row row"; exit 1; }
           done
           echo "rows OK"
+      - name: Installer smoke test
+        run: bash tests/install-smoke.sh
