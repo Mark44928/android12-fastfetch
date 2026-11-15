@@ -30,6 +30,20 @@ A [Fastfetch](https://github.com/fastfetch-cli/fastfetch) config tuned for **And
 
 ## Install
 
+### Installer (backs up existing files)
+
+```bash
+bash install.sh              # fzf menu when available: full or minimal
+bash install.sh --minimal    # nine-row preset instead
+```
+
+The installer writes `~/.config/fastfetch/config.jsonc` and `~/ascii.txt`,
+keeps timestamped backups of anything it replaces, and runs a render check.
+It records both files in `$XDG_STATE_HOME/android12-fastfetch/installed.tsv`;
+`bash install.sh --uninstall` removes them (or use `--keep-logo`).
+
+### Manual
+
 ```bash
 git clone https://github.com/Mark44928/android12-fastfetch.git
 cd android12-fastfetch
