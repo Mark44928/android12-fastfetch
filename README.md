@@ -43,6 +43,16 @@ fastfetch
 
 Fastfetch reads `~/.config/fastfetch/config.jsonc` by default. The config points the logo at `~/ascii.txt`, so keep that path or edit `logo.source`.
 
+### Minimal preset
+
+`presets/minimal.jsonc` keeps the logo and Gruvbox key color but trims the
+dashboard to nine rows (OS, kernel, uptime, packages, shell, terminal, memory,
+disk, date). Run it without replacing your main config:
+
+```bash
+fastfetch -c presets/minimal.jsonc --pipe
+```
+
 ### One-liner
 
 ```bash

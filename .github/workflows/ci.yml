@@ -27,6 +27,7 @@ jobs:
         run: |
           cp ascii.txt "$HOME/ascii.txt"
           fastfetch -c config.jsonc --pipe
+          fastfetch -c presets/minimal.jsonc --pipe
       # The config is Android-shaped (Termux disk folders, dpkg counts), so on
       # a Linux runner the rows must still RENDER — the values themselves
       # differ by platform and are not what this checks.

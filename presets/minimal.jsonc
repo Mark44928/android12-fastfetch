@@ -1,0 +1,32 @@
+{
+    // Minimal companion preset: the same logo and palette, nine rows instead
+    // of the full bordered dashboard. Run it directly with:
+    //   fastfetch -c presets/minimal.jsonc --pipe
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/2.71.0/doc/json_schema.json",
+    "logo": {
+        "type": "file",
+        "source": "~/ascii.txt",
+        "color": {
+            "1": "38;2;142;192;124"
+        }
+    },
+    "display": {
+        "color": {
+            "keys": "458588"
+        },
+        "separator": "  ",
+        "brightColor": false
+    },
+    "modules": [
+        { "type": "title", "key": "╭─" },
+        { "type": "os", "key": "│ OS" },
+        { "type": "kernel", "key": "│ Kernel" },
+        { "type": "uptime", "key": "│ Uptime" },
+        { "type": "packages", "key": "│ Packages" },
+        { "type": "shell", "key": "│ Shell" },
+        { "type": "terminal", "key": "│ Terminal" },
+        { "type": "memory", "key": "│ Memory" },
+        { "type": "disk", "key": "│ Disk", "folders": "/" },
+        { "type": "datetime", "key": "╰─ Date" }
+    ]
+}
