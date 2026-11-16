@@ -11,6 +11,8 @@ A [Fastfetch](https://github.com/fastfetch-cli/fastfetch) config tuned for **And
 <p align="center"><i>Actual <code>fastfetch -c config.jsonc</code> run on the author's Android 12 Termux phone — fixed-width bordered table: hardware → desktop → terminal → development → uptime, with the Gruvbox palette at the bottom. Rendered with <a href="https://github.com/Mark44928/plusafetch/tree/main/scripts/ansi2png.py">plusafetch's <code>ptycapture + ansi2png</code></a> — numpy + Pillow, driven by a pty. Live state, not a template: RAM/battery/uptime drift between invocations.</i></p>
 
 <img src="docs/fastfetch.png" width="900" alt="Fastfetch running in Termux — fixed-width bordered hardware/desktop/terminal/development/uptime table with penguin ASCII logo, Gruvbox palette below"/>
+<img src="docs/fastfetch-data.png" width="900" alt="android12-fastfetch with the full data layout and no logo"/>
+<img src="docs/fastfetch-minimal.png" width="900" alt="android12-fastfetch minimal preset"/>
 
 ## What's included
 
