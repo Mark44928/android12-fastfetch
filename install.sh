@@ -72,7 +72,7 @@ manifest_upsert() {
 }
 
 install_file() { # <source> <destination>
-    local src="$1" dst="$2" bak
+    local src="$1" dst="$2" bak tmp
     if [ "$DRY" = "1" ]; then
         printf '  would install %s -> %s\n' "${src#"$REPO_DIR"/}" "$dst"
         return 0
@@ -83,12 +83,20 @@ install_file() { # <source> <destination>
         manifest_upsert "$dst"
         return 0
     fi
-    if [ -e "$dst" ]; then
+    if [ -e "$dst" ] || [ -L "$dst" ]; then
         bak="$dst.bak-$(date +%Y%m%d-%H%M%S)-$$"
-        cp -p "$dst" "$bak"
+        if [ -L "$dst" ]; then
+            # Keep the symlink itself as the backup instead of writing
+            # through it into whatever it points at.
+            mv "$dst" "$bak"
+        else
+            cp -p "$dst" "$bak"
+        fi
         printf '  backup: %s\n' "$bak"
     fi
-    cp -p "$src" "$dst"
+    tmp="$(mktemp "$dst.tmp.XXXXXX")" || die "failed to create temp in $(dirname "$dst")"
+    if ! cp -p "$src" "$tmp"; then rm -f "$tmp"; die "failed to write $tmp"; fi
+    mv -f "$tmp" "$dst"
     manifest_upsert "$dst"
     printf '  installed: %s\n' "$dst"
 }
@@ -112,7 +120,7 @@ if [ "$UNINSTALL" = "1" ]; then
             printf '%s\t%s\n' "$path" "$old_hash" >> "$tmp"
             kept=$((kept + 1)); continue
         fi
-        [ -e "$path" ] || continue
+        [ -e "$path" ] || [ -L "$path" ] || continue
         if [ "$FORCE" = "0" ] && [ "$(hash_file "$path")" != "$old_hash" ]; then
             warn "keeping modified file: $path (use --force to remove)"
             printf '%s\t%s\n' "$path" "$old_hash" >> "$tmp"
