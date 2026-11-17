@@ -59,14 +59,22 @@ fastfetch
 
 Fastfetch reads `~/.config/fastfetch/config.jsonc` by default. The config points the logo at `~/ascii.txt`, so keep that path or edit `logo.source`.
 
-### Minimal preset
+### Companion presets
 
 `presets/minimal.jsonc` keeps the logo and Gruvbox key color but trims the
 dashboard to nine rows (OS, kernel, uptime, packages, shell, terminal, memory,
-disk, date). Run it without replacing your main config:
+disk, date). Run one without replacing your main config:
 
 ```bash
 fastfetch -c presets/minimal.jsonc --pipe
+```
+
+Two terminal-theme presets ship alongside it, using the Greenit and Bluney key
+colors and matching logo tints:
+
+```bash
+fastfetch -c presets/greenit.jsonc --pipe
+fastfetch -c presets/bluney.jsonc --pipe
 ```
 
 ### One-liner
@@ -133,7 +141,7 @@ Tiny, dependency-free tools from the same family:
 - [Plusalator](https://github.com/Mark44928/Plusalator) — C++17 calculator REPL — Qalculate-flavored, ghost autosuggest, 18 themes
 - [GrubBlastersHTML](https://github.com/Mark44928/GrubBlastersHTML) — Turn-based artillery in one HTML file — 72 weapons, fully destructible terrain
 - [SnakTUI](https://github.com/Mark44928/SnakTUI) — Snake game for the terminal — Textual + Python
-- [Easy-Termux-Package-Manager](https://github.com/Mark44928/Easy-Termux-Package-Manager) — fzf-driven package manager for Termux — snapshots, audit, 188 tests
+- [Easy-Termux-Package-Manager](https://github.com/Mark44928/Easy-Termux-Package-Manager) — fzf-driven package manager for Termux — snapshots, audit, 190 tests
 - [NoNameOS](https://github.com/Mark44928/NoNameOS) — OS simulation in a single C++17 file — virtual FS, real shell
 - [Greenit](https://github.com/Mark44928/Greenit) — green-injected theme family — dark + light, single palette.json
 - [CalculaHTML](https://github.com/Mark44928/CalculaHTML) — static HTML calculator — 15 themes + System mode, zero deps
