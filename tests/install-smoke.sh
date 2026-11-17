@@ -2,7 +2,7 @@
 # Installer CI: fake HOME/XDG -> install -> uninstall.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-TMP="${TMPDIR:-/tmp}/ff-install-smoke.$$"
+TMP="${TMPDIR:-$HOME/.cache}/ff-install-smoke.$$"
 trap 'rm -rf "$TMP"' EXIT
 mkdir -p "$TMP/home" "$TMP/config" "$TMP/state"
 export HOME="$TMP/home" XDG_CONFIG_HOME="$TMP/config" XDG_STATE_HOME="$TMP/state"
