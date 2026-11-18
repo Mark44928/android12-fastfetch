@@ -21,6 +21,7 @@ Usage: ./install.sh [options]
 
 Install:
   --minimal      install presets/minimal.jsonc instead of the full dashboard
+  --snaktui      install presets/snaktui.jsonc instead of the full dashboard
   --dry-run      print what would change
   --yes          skip menus and the confirmation
   --no-menu      never show the interactive fzf menu
@@ -42,6 +43,7 @@ have() { command -v "$1" >/dev/null 2>&1; }
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --minimal) SOURCE_SET=1; SOURCE="$REPO_DIR/presets/minimal.jsonc" ;;
+        --snaktui) SOURCE_SET=1; SOURCE="$REPO_DIR/presets/snaktui.jsonc" ;;
         --dry-run) DRY=1 ;;
         --yes|-y) YES=1; MENU=0 ;;
         --no-menu) MENU=0 ;;
@@ -144,11 +146,12 @@ if [ "$UNINSTALL" = "1" ]; then
 fi
 
 if [ "$MENU" = "1" ] && [ "$SOURCE_SET" = "0" ] && [ -t 0 ] && [ -t 1 ] && have fzf; then
-    choice=$(printf 'Full dashboard\nMinimal preset\nCancel\n' \
+    choice=$(printf 'Full dashboard\nMinimal preset\nSnakTUI preset\nCancel\n' \
         | fzf --reverse --height=30% --border --prompt='fastfetch config> ') || choice="Cancel"
     case "$choice" in
         "Full dashboard") ;;
         "Minimal preset") SOURCE="$REPO_DIR/presets/minimal.jsonc" ;;
+        "SnakTUI preset") SOURCE="$REPO_DIR/presets/snaktui.jsonc" ;;
         *) echo "Canceled."; exit 0 ;;
     esac
 fi

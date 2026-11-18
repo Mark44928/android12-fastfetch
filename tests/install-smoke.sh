@@ -13,4 +13,8 @@ bash "$ROOT/install.sh" --yes >/dev/null
 bash "$ROOT/install.sh" --uninstall --yes >/dev/null
 test ! -e "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
 test ! -e "$HOME/ascii.txt"
+bash "$ROOT/install.sh" --snaktui --yes >/dev/null
+cmp "$ROOT/presets/snaktui.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
+bash "$ROOT/install.sh" --uninstall --yes >/dev/null
+test ! -e "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
 echo "installer smoke OK"
