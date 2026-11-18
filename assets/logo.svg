@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
+  <title id="t">android12-fastfetch</title>
+  <desc id="d">android12-fastfetch logo: a blue phone with Android layout rows on a dark panel.</desc>
+  <rect width="1200" height="300" rx="28" fill="#07121A"/>
+  <rect x="1" y="1" width="1198" height="298" rx="27" fill="none" stroke="#254A62" stroke-width="2"/>
+  <circle cx="150" cy="150" r="96" fill="#0C1C27" stroke="#213F51" stroke-width="2"/>
+  <rect x="103" y="66" width="94" height="168" rx="17" fill="#0A141D" stroke="#7DBBFF" stroke-width="4"/>
+  <path d="M138 79h24" stroke="#7DBBFF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M118 111h35M118 130h64M118 149h51M118 168h64M118 187h42" stroke="#3DDC84" stroke-width="5" stroke-linecap="round"/>
+  <path d="M160 192l-14 23h11l-6 19 19-27h-11l8-15z" fill="#FFD166"/>
+  <text x="307" y="150" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="70" font-weight="800" letter-spacing="2" fill="#EAF7FF">ANDROID12-FASTFETCH</text>
+  <text x="311" y="199" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" letter-spacing="4" fill="#7EABBF">FASTFETCH CONFIG · TERMUX · X11</text>
+  <text x="1138" y="252" text-anchor="end" font-family="ui-monospace,monospace" font-size="14" letter-spacing="3" fill="#476879">MARK44928</text>
+</svg>

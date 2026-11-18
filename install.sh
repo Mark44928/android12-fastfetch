@@ -82,7 +82,6 @@ install_file() { # <source> <destination>
     mkdir -p "$(dirname "$dst")"
     if [ -f "$dst" ] && cmp -s "$src" "$dst"; then
         printf '  unchanged: %s\n' "$dst"
-        manifest_upsert "$dst"
         return 0
     fi
     if [ -e "$dst" ] || [ -L "$dst" ]; then

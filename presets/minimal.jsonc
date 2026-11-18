@@ -26,7 +26,7 @@
         { "type": "shell", "key": "│ Shell" },
         { "type": "terminal", "key": "│ Terminal" },
         { "type": "memory", "key": "│ Memory" },
-        { "type": "disk", "key": "│ Disk", "folders": "/" },
+        { "type": "disk", "key": "│ Disk", "folders": "/data:/storage/emulated/0" },
         { "type": "datetime", "key": "╰─ Date" }
     ]
 }

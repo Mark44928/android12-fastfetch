@@ -1,5 +1,7 @@
 # android12-fastfetch
 
+<p align="center"><img src="assets/logo.svg" width="760" alt="android12-fastfetch logo"></p>
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 ![Fastfetch](https://img.shields.io/badge/fastfetch-config-5e5ce6)
 ![Android 12](https://img.shields.io/badge/Android-12-3DDC84?logo=android&logoColor=white)
