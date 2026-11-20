@@ -72,11 +72,12 @@ disk, date). Run one without replacing your main config:
 fastfetch -c presets/minimal.jsonc --pipe
 ```
 
-Three terminal-theme presets ship alongside it, using the Greenit, Bluney and SnakTUI palettes, with matching logo tints:
+Four terminal-theme presets ship alongside it, using the Greenit, Bluney, Yellen and SnakTUI palettes, with matching logo tints:
 
 ```bash
 fastfetch -c presets/greenit.jsonc --pipe
 fastfetch -c presets/bluney.jsonc --pipe
+fastfetch -c presets/yellen.jsonc --pipe
 fastfetch -c presets/snaktui.jsonc --pipe
 ```
 
@@ -140,6 +141,8 @@ Tiny, dependency-free tools from the same family:
 - [Pythonator](https://github.com/Mark44928/Pythonator) — Python rewrite of Plusalator — stdlib-only, `--eval`/`--json`
 - [Solvamath](https://github.com/Mark44928/Solvamath) — terminal math puzzle game — seven puzzle types, daily seed, achievements
 - [Bluney](https://github.com/Mark44928/Bluney) — blue-injected theme family — dark + light, single palette.json
+- [Fluffless Prompt](https://github.com/Mark44928/FlufflessPrompt) — quiet Oh My Zsh theme — Git state, exit codes, clock
+- [Weatui](https://github.com/Mark44928/Weatui) — friendly Open-Meteo weather TUI — saved cities, forecasts, no API key
 - [Yellen](https://github.com/Mark44928/Yellen) — golden-yellow theme family — dark + light, single palette.json
 - [Mark44928](https://github.com/Mark44928) — profile and project index
 - [plusafetch](https://github.com/Mark44928/plusafetch) — C++23 fetch for Termux — ~23 ms, zero subprocesses on the default path
