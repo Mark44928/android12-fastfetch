@@ -20,6 +20,8 @@ usage() {
 Usage: ./install.sh [options]
 
 Install:
+  --preset NAME  install presets/NAME.jsonc (minimal, greenit, bluney,
+                 yellen, snaktui); same as --minimal/--snaktui for those two
   --minimal      install presets/minimal.jsonc instead of the full dashboard
   --snaktui      install presets/snaktui.jsonc instead of the full dashboard
   --dry-run      print what would change
@@ -44,6 +46,13 @@ while [ "$#" -gt 0 ]; do
     case "$1" in
         --minimal) SOURCE_SET=1; SOURCE="$REPO_DIR/presets/minimal.jsonc" ;;
         --snaktui) SOURCE_SET=1; SOURCE="$REPO_DIR/presets/snaktui.jsonc" ;;
+        --preset)
+            [ "$#" -ge 2 ] || die "--preset needs a name (try --help)"
+            SOURCE="$REPO_DIR/presets/$2.jsonc"
+            [ -f "$SOURCE" ] || die "unknown preset: $2 (presets: minimal, greenit, bluney, yellen, snaktui)"
+            SOURCE_SET=1
+            shift
+            ;;
         --dry-run) DRY=1 ;;
         --yes|-y) YES=1; MENU=0 ;;
         --no-menu) MENU=0 ;;
@@ -145,12 +154,15 @@ if [ "$UNINSTALL" = "1" ]; then
 fi
 
 if [ "$MENU" = "1" ] && [ "$SOURCE_SET" = "0" ] && [ -t 0 ] && [ -t 1 ] && have fzf; then
-    choice=$(printf 'Full dashboard\nMinimal preset\nSnakTUI preset\nCancel\n' \
+    choice=$(printf 'Full dashboard\nMinimal preset\nSnakTUI preset\nGreenit preset\nBluney preset\nYellen preset\nCancel\n' \
         | fzf --reverse --height=30% --border --prompt='fastfetch config> ') || choice="Cancel"
     case "$choice" in
         "Full dashboard") ;;
         "Minimal preset") SOURCE="$REPO_DIR/presets/minimal.jsonc" ;;
         "SnakTUI preset") SOURCE="$REPO_DIR/presets/snaktui.jsonc" ;;
+        "Greenit preset") SOURCE="$REPO_DIR/presets/greenit.jsonc" ;;
+        "Bluney preset") SOURCE="$REPO_DIR/presets/bluney.jsonc" ;;
+        "Yellen preset") SOURCE="$REPO_DIR/presets/yellen.jsonc" ;;
         *) echo "Canceled."; exit 0 ;;
     esac
 fi

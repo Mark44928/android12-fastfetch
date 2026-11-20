@@ -23,4 +23,11 @@ bash "$ROOT/install.sh" --snaktui --yes >/dev/null
 cmp "$ROOT/presets/snaktui.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
 bash "$ROOT/install.sh" --uninstall --yes >/dev/null
 test ! -e "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
+bash "$ROOT/install.sh" --preset greenit --yes >/dev/null
+cmp "$ROOT/presets/greenit.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
+bash "$ROOT/install.sh" --uninstall --yes >/dev/null
+if bash "$ROOT/install.sh" --preset nope --yes >/dev/null 2>&1; then
+    echo "unknown preset was accepted" >&2
+    exit 1
+fi
 echo "installer smoke OK"

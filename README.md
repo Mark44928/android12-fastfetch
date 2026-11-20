@@ -40,6 +40,7 @@ A [Fastfetch](https://github.com/fastfetch-cli/fastfetch) config tuned for **And
 bash install.sh              # fzf menu when available: full, minimal or SnakTUI
 bash install.sh --minimal    # nine-row preset instead
 bash install.sh --snaktui    # neon SnakTUI palette instead
+bash install.sh --preset greenit  # any presets/*.jsonc (greenit, bluney, yellen)
 ```
 
 The installer writes `~/.config/fastfetch/config.jsonc` and `~/ascii.txt`,
