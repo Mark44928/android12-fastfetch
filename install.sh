@@ -76,7 +76,7 @@ hash_file() {
 manifest_upsert() {
     local path="$1" tmp
     mkdir -p "$STATE_DIR"
-    tmp="$MANIFEST.$$"
+    tmp=$(mktemp "$MANIFEST.XXXXXX") || die "failed to create temp manifest"
     { [ -f "$MANIFEST" ] && awk -F'\t' -v p="$path" '$1 != p' "$MANIFEST" || true; } > "$tmp"
     printf '%s\t%s\n' "$path" "$(hash_file "$path")" >> "$tmp"
     mv -f "$tmp" "$MANIFEST"
@@ -122,7 +122,9 @@ if [ "$UNINSTALL" = "1" ]; then
             die "use --yes with --uninstall in a non-interactive shell"
         fi
     fi
-    removed=0; kept=0; tmp="$MANIFEST.$$"; tmp_old="$tmp.old"
+    removed=0; kept=0
+    tmp=$(mktemp "$MANIFEST.XXXXXX") || die "failed to create temp manifest"
+    tmp_old=$(mktemp "$MANIFEST.XXXXXX") || die "failed to create temp manifest"
     cat "$MANIFEST" > "$tmp_old"
     while IFS=$'\t' read -r path old_hash; do
         [ -n "$path" ] || continue
