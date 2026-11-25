@@ -1,0 +1,14 @@
+# .gitignore — android12-fastfetch
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temp
+*.log
+.tmp/
