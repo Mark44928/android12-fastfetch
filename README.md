@@ -161,3 +161,7 @@ Tiny, dependency-free tools from the same family:
 
 [MIT](LICENSE) — free to reuse, fork, or adapt. See [CONTRIBUTING.md](CONTRIBUTING.md)
 to contribute; this project follows the standard [Code of Conduct](CODE_OF_CONDUCT.md).
+
+---
+
+**More projects:** [Mark44928's hub](https://mark44928.github.io/Mark44928/) — a family of dependency-free tools for Termux, Linux, and the terminal.
