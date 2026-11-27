@@ -1,0 +1,32 @@
+{
+    // Mono companion preset: a grayscale variant of presets/minimal.jsonc.
+    // Run it directly with:
+    //   fastfetch -c presets/mono.jsonc --pipe
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/2.71.0/doc/json_schema.json",
+    "logo": {
+        "type": "file",
+        "source": "~/ascii.txt",
+        "color": {
+            "1": "38;2;200;200;200"
+        }
+    },
+    "display": {
+        "color": {
+            "keys": "38;2;160;160;160"
+        },
+        "separator": "  ",
+        "brightColor": false
+    },
+    "modules": [
+        { "type": "title", "key": "╭─" },
+        { "type": "os", "key": "│ OS" },
+        { "type": "kernel", "key": "│ Kernel" },
+        { "type": "uptime", "key": "│ Uptime" },
+        { "type": "packages", "key": "│ Packages" },
+        { "type": "shell", "key": "│ Shell" },
+        { "type": "terminal", "key": "│ Terminal" },
+        { "type": "memory", "key": "│ Memory" },
+        { "type": "disk", "key": "│ Disk", "folders": "/data:/storage/emulated/0" },
+        { "type": "datetime", "key": "╰─ Date" }
+    ]
+}
